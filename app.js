@@ -5,6 +5,7 @@ const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+
 const holdings=[
 ["AAPL","Apple Inc.","$175.35","+1.84%","42","$7,364.70"],
 ["NVDA","NVIDIA Corp.","$118.42","+3.21%","65","$7,697.30"],
