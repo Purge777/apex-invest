@@ -1,9 +1,10 @@
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL_HERE";
-const SUPABASE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+const SUPABASE_URL = "https://xgppalfptmyqygcyjoem.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_vlWzF6ekpJkzv7mtdBSvzQ_SmYk3kCV";
 
 const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
+);
 );
 
 const holdings=[
