@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apex Invest — Wealth, simplified.</title>
+<meta name="description" content="Apex Invest modern investment dashboard demo">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><span class="logo">A</span><span>Apex <b>Invest</b></span></div>
+  <div class="profile"><div class="avatar">AS</div><div><b>Alex Stone</b><small>Personal account</small></div><span>⌄</span></div>
+  <nav>
+    <a class="active" href="#home">▦ <span>Overview</span></a>
+    <a href="#portfolio">◈ <span>Portfolio</span></a>
+    <a href="#markets">◉ <span>Markets</span></a>
+    <a href="#watchlist">☆ <span>Watchlist</span></a>
+    <a href="#activity">↺ <span>Activity</span></a>
+  </nav>
+  <div class="side-label">TOOLS</div>
+  <nav>
+    <a href="#goals">◎ <span>Goals</span></a><a href="#insights">✦ <span>Insights</span><em>New</em></a>
+  </nav>
+  <div class="sidebar-foot"><a href="#settings">⚙ <span>Settings</span></a><button id="logout">↪ <span>Sign out</span></button></div>
+</aside>
+
+<main>
+<header class="topbar">
+  <button class="mobile-menu" id="menu">☰</button>
+  <div class="search"><span>⌕</span><input id="search" placeholder="Search stocks, ETFs, crypto..."></div>
+  <div class="top-right"><button class="round" id="theme">☼</button><button class="round notif" id="bell">♢<i></i></button><button class="avatar top-avatar">AS</button></div>
+</header>
+
+<div class="page" id="home">
+  <div class="welcome"><div><span class="kicker">SUNDAY · AUGUST 9, 2026</span><h1>Your money, in motion.</h1><p>Track your investments, discover opportunities, and stay ahead.</p></div><button class="primary" id="newTrade">＋ New trade</button></div>
+  <div class="demo"><span>●</span> Demo account · Prices and transactions are simulated <button id="dismiss">Dismiss</button></div>
+
+  <section class="dashboard-grid">
+    <article class="card portfolio-card">
+      <div class="card-title"><div><span class="muted">Total portfolio value</span><h2>$128,460<span>.72</span></h2><div class="up">↗ $9,982.14 <small>(+8.42%) this year</small></div></div><select id="range"><option>1Y</option><option>6M</option><option>3M</option><option>1M</option></select></div>
+      <div class="chart"><canvas id="chart"></canvas></div><div class="axis"><span>Aug '25</span><span>Oct</span><span>Dec</span><span>Feb</span><span>Apr</span><span>Jun</span><span>Aug '26</span></div>
+    </article>
+    <article class="card cash-card">
+      <div class="card-title"><span class="muted">Available cash</span><span class="cash-icon">＋</span></div>
+      <h2>$18,240<span>.00</span></h2><p>Ready to invest or withdraw</p><button class="secondary" id="addFunds">Add funds</button><div class="cash-line"><span>Invested</span><b>$110,220.72</b></div><div class="cash-line"><span>Day change</span><b class="up">+$1,284.32</b></div>
+    </article>
+  </section>
+
+  <section id="portfolio">
+    <div class="section-head"><div><span class="kicker">YOUR INVESTMENTS</span><h3>Portfolio</h3></div><button class="link-btn" id="viewAll">View all →</button></div>
+    <div class="card table-card"><div class="table-scroll"><table><thead><tr><th>Asset</th><th>Price</th><th>Today</th><th>Shares</th><th>Market value</th><th></th></tr></thead><tbody id="holdings"></tbody></table></div></div>
+  </section>
+
+  <section id="markets">
+    <div class="section-head"><div><span class="kicker">MARKET PULSE</span><h3>Markets</h3></div><button class="link-btn">Explore markets →</button></div>
+    <div class="market-grid" id="marketsGrid"></div>
+  </section>
+
+  <section class="two-col">
+    <div id="watchlist"><div class="section-head"><h3>Watchlist</h3><button class="link-btn" id="addWatch">＋ Add</button></div><div class="card list" id="watch"></div></div>
+    <div id="activity"><div class="section-head"><h3>Recent activity</h3><button class="link-btn">View all →</button></div><div class="card list">
+      <div class="activity"><span class="act buy">↗</span><div><b>Bought Apple</b><small>12 shares · Today, 10:42 AM</small></div><strong>−$2,104.20</strong></div>
+      <div class="activity"><span class="act deposit">＋</span><div><b>Cash deposit</b><small>Yesterday, 3:18 PM</small></div><strong class="up">+$5,000.00</strong></div>
+      <div class="activity"><span class="act sell">↘</span><div><b>Sold Bitcoin</b><small>Aug 6 · 11:07 AM</small></div><strong>+$1,842.50</strong></div>
+    </div></div>
+  </section>
+</div>
+<footer><span>© 2026 Apex Invest</span><span>Demo interface · Not a brokerage or financial adviser</span><span>Privacy · Terms · Support</span></footer>
+</main>
+</div>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="x" id="close">×</button><span class="kicker">SIMULATED ORDER</span><h2 id="modalTitle">New trade</h2><p>Place a pretend order to preview the Apex Invest experience.</p>
+<label>Asset<select id="asset"><option>AAPL</option><option>NVDA</option><option>MSFT</option><option>BTC</option><option>ETH</option></select></label>
+<div class="form-row"><label>Side<select id="side"><option>Buy</option><option>Sell</option></select></label><label>Amount<input id="amount" type="number" min="1" placeholder="1000"></label></div>
+<button class="primary full" id="confirm">Confirm simulated order</button></div></div>
+<script src="app.js"></script>
+</body></html>
